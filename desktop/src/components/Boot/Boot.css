@@ -1,0 +1,37 @@
+.boot-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.boot-title {
+    font-size: 80px;
+    letter-spacing: 10px;
+    margin-bottom: 40px;
+}
+
+.boot-text {
+    color: #58a6ff;
+    font-size: 18px;
+    min-height: 30px;
+}
+
+.progress {
+    width: 450px;
+    height: 4px;
+    background: #1d1d1d;
+    margin-top: 35px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #58a6ff;
+    transition: .8s;
+}

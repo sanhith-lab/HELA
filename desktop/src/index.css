@@ -1,0 +1,97 @@
+:root {
+  --bg-dark: #04060a;
+  --bg-card: rgba(13, 18, 30, 0.75);
+  --bg-card-hover: rgba(22, 30, 48, 0.85);
+  --border-glow: rgba(56, 189, 248, 0.2);
+  --border-glow-active: rgba(56, 189, 248, 0.6);
+  --accent-cyan: #38bdf8;
+  --accent-purple: #a855f7;
+  --accent-pink: #ec4899;
+  --accent-emerald: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-main);
+  background: var(--bg-dark);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(4, 6, 10, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+
+/* Global Glassmorphism Utility */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border-btn {
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(168, 85, 247, 0.1));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-border-btn:hover {
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-dark);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

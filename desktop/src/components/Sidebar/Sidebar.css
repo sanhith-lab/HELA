@@ -1,0 +1,80 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: rgba(8, 12, 22, 0.85);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(56, 189, 248, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  z-index: 10;
+  flex: 0 0 240px;
+}
+
+.sidebar-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 12px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.sidebar-logo > span { display: inline-flex; align-items: center; gap: 10px; }
+.sidebar-toggle { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; border: 1px solid rgba(148,163,184,.2); background: rgba(255,255,255,.04); color: #94a3b8; cursor: pointer; }
+.sidebar-toggle:hover { color: #38bdf8; border-color: rgba(56,189,248,.5); background: rgba(56,189,248,.1); }
+
+.sidebar-logo::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.menu-item {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  padding: 0 16px;
+  margin-bottom: 6px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.2);
+  color: #f8fafc;
+  transform: translateX(4px);
+}
+
+.menu-item.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+}
+
+.menu-item.active svg {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+}

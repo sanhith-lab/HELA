@@ -1,0 +1,93 @@
+.command-bar {
+  width: 90%;
+  max-width: 880px;
+  height: 64px;
+  background: rgba(13, 18, 30, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.command-bar:hover,
+.command-bar:focus-within {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 12px 48px rgba(56, 189, 248, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+.command-input {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+}
+
+.command-input::placeholder {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.cmd-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cmd-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.cmd-btn.active-mic {
+  background: rgba(236, 72, 153, 0.2);
+  border-color: rgba(236, 72, 153, 0.6);
+  color: #ec4899;
+  box-shadow: 0 0 16px rgba(236, 72, 153, 0.4);
+  animation: pulsePink 1.5s infinite;
+}
+
+@keyframes pulsePink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.send-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.35);
+}
+
+.send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 22px rgba(56, 189, 248, 0.5);
+}

@@ -1,0 +1,67 @@
+.splash-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #0b0b12 0%, #050505 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: .3;
+}
+
+.splash-content {
+    z-index: 10;
+    text-align: center;
+}
+
+.logo {
+    font-size: 84px;
+    color: white;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px rgba(58, 164, 255, .35);
+}
+
+.subtitle {
+    color: #9b9b9b;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #3ba4ff;
+    font-size: 16px;
+}
+
+.loading span:first-child {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3ba4ff;
+    animation: pulse 1.2s infinite;
+    box-shadow: 0 0 20px #3ba4ff;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .4;
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 1;
+    }
+}

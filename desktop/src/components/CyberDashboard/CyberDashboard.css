@@ -1,0 +1,146 @@
+.cyber-window {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    background: #0B0F17;
+    overflow: auto;
+}
+
+.cyber-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.cyber-header h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.cyber-header p {
+    margin-top: 10px;
+    color: #94A3B8;
+}
+
+.scan-btn {
+    border: none;
+    background: #2563EB;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.cyber-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: #151A24;
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.stat-card svg {
+    color: #3B82F6;
+    margin-bottom: 15px;
+}
+
+.stat-card h2 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.stat-card span {
+    color: #94A3B8;
+}
+
+.cyber-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.panel {
+    background: #151A24;
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.panel h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px;
+}
+
+.feed-item {
+    display: flex;
+    gap: 15px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.feed-item svg {
+    color: #EF4444;
+}
+
+.feed-item p {
+    margin: 6px 0 0;
+    color: #94A3B8;
+}
+
+.map-placeholder {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #94A3B8;
+    border: 2px dashed rgba(255, 255, 255, .08);
+    border-radius: 16px;
+}
+
+.map-placeholder svg {
+    color: #3B82F6;
+    margin-bottom: 18px;
+}
+
+.intel-panel {
+    background: #151A24;
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.intel-panel h3 {
+    margin: 0 0 20px;
+}
+
+.intel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.intel-item:last-child {
+    border-bottom: none;
+}
+
+.intel-item svg {
+    color: #3B82F6;
+}

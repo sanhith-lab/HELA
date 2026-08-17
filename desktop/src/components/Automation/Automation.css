@@ -1,0 +1,103 @@
+.automation-window {
+    width: 100%;
+    height: 100%;
+    background: #0B0F17;
+    padding: 40px;
+    overflow: auto;
+}
+
+.automation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.automation-header h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.automation-header p {
+    margin-top: 10px;
+    color: #94A3B8;
+}
+
+.create-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: #2563EB;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.automation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.automation-card {
+    background: #151A24;
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 18px;
+    padding: 28px;
+    transition: .25s;
+}
+
+.automation-card:hover {
+    transform: translateY(-4px);
+    border-color: #2563EB;
+}
+
+.automation-card svg {
+    color: #3B82F6;
+    margin-bottom: 18px;
+}
+
+.automation-card h3 {
+    margin: 0;
+}
+
+.automation-card p {
+    margin-top: 12px;
+    color: #94A3B8;
+}
+
+.automation-panel {
+    background: #151A24;
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.automation-panel h2 {
+    margin: 0 0 20px;
+}
+
+.workflow-item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.workflow-item:last-child {
+    border-bottom: none;
+}
+
+.run-btn {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: #2563EB;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 14px;
+    cursor: pointer;
+}
