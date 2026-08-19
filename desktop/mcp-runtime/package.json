@@ -1,0 +1,20 @@
+{
+  "name": "hela-mcp-runtime",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && node dist/gateway.js",
+    "build": "tsc",
+    "start": "node dist/gateway.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "latest",
+    "@modelcontextprotocol/server": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "^6.0.2"
+  }
+}

@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "mcp": "npm --prefix mcp-runtime run dev",
+    "mcp:build": "npm --prefix mcp-runtime run build",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"

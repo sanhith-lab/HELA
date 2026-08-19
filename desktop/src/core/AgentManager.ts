@@ -1,5 +1,5 @@
 import type { AgentName } from "./CommandRouter";
-import { aiService, AIQuotaError, type AIRequestContext } from "../services/ai/AIService";
+import { mcpRuntimeService } from "../services/mcp/MCPRuntimeService";
 
 export type AgentStatus =
   | "Active"
@@ -92,43 +92,11 @@ class AgentManager {
 
     this.setAgentStatus(name, "Processing");
     try {
-      const toolBackedAgents = new Set<AgentName>([
-        "browser", "web_navigation", "website_analysis", "research", "assignment",
-        "coding", "debugging", "code_review", "memory", "context", "rag", "knowledge_graph",
-      ]);
-      const modelOwnedAgents = new Set<AgentName>([
-        "chief_ai", "planner", "task_manager", "decision", "conversation", "personality", "voice", "language",
-        "fact_checking", "summarization", "knowledge", "developer", "vision", "ocr", "image_analysis", "media",
-        "security", "threat_detection", "privacy", "cyber_analysis", "system", "file", "application", "monitoring",
-        "communication", "email_message", "world_model", "curiosity", "dream_simulation",
-      ]);
-      let finalResult: string;
-      if (modelOwnedAgents.has(name) && !toolBackedAgents.has(name)) {
-        // Model-owned agents no longer execute their old placeholder body.
-        // The configured provider is the actual implementation of the agent.
-        finalResult = await aiService.generateResponse(
-          command,
-          `You are the ${agent.displayName}, a production HELA agent. Execute the user's request using your specialized role. Never claim that a file, system, browser, camera, message, security scan, or external action was completed unless a real tool result is provided. Return a useful answer, clearly state limitations, and ask for required input when needed.`,
-          context as AIRequestContext | undefined,
-        );
-      } else {
-        const result = await agent.execute(command, context);
-        finalResult = ["chief_ai", "coding", "debugging", "code_review", "assignment"].includes(name)
-          ? result
-          : await aiService.generateResponse(
-              command,
-              `You are the ${agent.displayName} inside HELA. Synthesize the real local/tool result below into a useful answer. Do not claim an action happened unless the result proves it.\n\nTool result:\n${result}`,
-              context as AIRequestContext | undefined,
-            );
-      }
+      const finalResult = await mcpRuntimeService.executeAgent(name, command, context);
       this.setAgentStatus(name, "Active");
       return finalResult;
     } catch (err: unknown) {
       this.setAgentStatus(name, "Ready");
-      // Do not convert provider/tool failures into successful-looking text.
-      // The workflow runner must stop here so it cannot spend another model
-      // request trying to verify an execution that already failed.
-      if (err instanceof AIQuotaError) throw err;
       throw err instanceof Error ? err : new Error(String(err));
     }
   }
